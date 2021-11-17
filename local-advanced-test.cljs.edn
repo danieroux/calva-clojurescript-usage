@@ -1,0 +1,6 @@
+;; For local dev advanced compilation testing
+{:pseudo-names    true
+ :pretty-print    true
+ :closure-defines {cljs.core/*global*                                            "window"
+                   goog.DEBUG                                                    false
+                   goog.debug.LOGGING_ENABLED                                    true}}

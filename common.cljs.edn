@@ -1,0 +1,21 @@
+;; Figwheel annotations
+^{:watch-dirs ["src/main"]
+  :css-dirs ["resources/public/css"]
+  :ring-server-options {:port 9010}}
+
+;; Standard ClojureScript compiler options
+{:main            repro.ui.core
+ :output-to       "resources/public/js/main.js"
+ :output-dir      "resources/public/js"
+ :asset-path      "/js"
+ :target          :bundle
+ :language-in     :es6
+
+ :infer-externs   true
+ :output-wrapper  true
+ :npm-deps        false
+
+ ; :none is no optimisations. So development
+ ; :default is with optimisations. So production
+ :bundle-cmd      {:none    ["npx" "webpack" "./resources/public/js/main.js" "-o" "resources/public/js" "--mode=development"]
+                   :default ["npx" "webpack" "./resources/public/js/main.js" "-o" "resources/public/js" "--mode=production"]}}
