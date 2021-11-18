@@ -4,8 +4,12 @@
 
 (defn open-portal
   []
-  (def p (p/open))
-  (add-tap #'p/submit)
-  (tap> {::open-portal "Hello! Portal has been opened."}))
+  (let [ui (p/open)]
+    (add-tap #'p/submit)
+    (tap> {::open-portal "Hello! Portal has been opened."})
+    ui))
 
-#_ (open-portal)
+(comment
+  (open-portal)
+  (tap> "Tap, tap! Who's there?"))
+  

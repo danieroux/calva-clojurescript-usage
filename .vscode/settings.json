@@ -1,0 +1,14 @@
+{
+  "calva.replConnectSequences": [
+    {
+      "name": "My local build",
+      "projectType": "deps.edn",
+      "cljsType": {
+        "dependsOn": "Figwheel Main",
+        "connectCode": "(start-cljs-repl)",
+        "isConnectedRegExp": "To quit, type: :cljs/quit",
+        "buildsRequired": false,
+      }
+    }
+  ]
+}
