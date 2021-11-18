@@ -9,8 +9,10 @@
    * Close the alert displayed
 1. Wait for the Calva output/repl window to display `; Connected session: cljs`
 1. Load `src/main/repro/ui/core.cljs` (open it and use the command **Calva: Load file and dependencies**) 
-
-
-... from here I want to open portal.cljs, eval the file and have Portal pop up.
-
-It requires some fiddling with “Toggle the REPL connection” for both output.calva-repl and my portal.cljs. And I have not found a sequence that is reliable yet.
+1. Also load `dev/tooling/portal.cljs`, and confirm that portal opens in a web browser window.
+1. Then evaluate the two forms in the rich comment block at the bottom of the file:
+    ```clojure
+    (comment
+      (open-portal)
+      (tap> "Tap, tap! Who's there?"))
+   ```
