@@ -5,7 +5,10 @@
 (defn open-portal
   []
   (def p (p/open))
+  #_ (def p (p/open {:launcher :vs-code}))
   (add-tap #'p/submit)
   (tap> {::open-portal "Hello! Portal has been opened."}))
 
-#_ (open-portal)
+(comment
+  (open-portal))
+  
